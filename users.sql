@@ -3,21 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 04, 2019 at 07:07 PM
+-- Generation Time: Oct 04, 2019 at 06:49 AM
 -- Server version: 10.3.17-MariaDB-0+deb10u1
--- PHP Version: 7.3.9-1~deb10u1
+-- PHP Version: 7.3.4-2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
--- Database: `chandru`
+-- Database: `angularjo`
 --
 
 -- --------------------------------------------------------
@@ -33,8 +27,13 @@ CREATE TABLE `users` (
   `username` varchar(30) NOT NULL,
   `pswd` varchar(120) NOT NULL,
   `user_role` tinyint(2) NOT NULL DEFAULT 2,
-  `created_at` datetime NOT NULL,
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `record_status` int(11) NOT NULL,
+  `created_date` datetime NOT NULL,
+  `created_by` varchar(50) NOT NULL,
+  `modified_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `modified_by` varchar(50) DEFAULT NULL,
+  `deleted_date` datetime NOT NULL,
+  `deleted_by` varchar(50) DEFAULT NULL,
   `last_login` datetime DEFAULT NULL,
   `login_device` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -60,6 +59,3 @@ ALTER TABLE `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
