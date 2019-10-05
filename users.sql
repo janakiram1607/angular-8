@@ -25,6 +25,7 @@ CREATE TABLE `users` (
   `f_name` varchar(60) DEFAULT NULL,
   `l_name` varchar(60) DEFAULT NULL,
   `username` varchar(30) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `pswd` varchar(120) NOT NULL,
   `user_role` tinyint(2) NOT NULL DEFAULT 2,
   `record_status` int(11) NOT NULL,
